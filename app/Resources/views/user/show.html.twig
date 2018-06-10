@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+.form-group
+{
+  max-width: 150px;
+  margin: 10px auto;
+}
+
+input[type="submit "]:hover, input[type="submit"]:focus, input[type="submit"].active:focus, input[type="submit"].active:hover,input[type="submit"].active.hover, input[type="submit"].active.focus
+{    color: #fff;
+    background-color: #204d74;
+    border-color: #122b40;
+}
+input[type="submit"], input[type="button"]
+{
+    margin-left: 1px;
+    margin-top: 1px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    height: 34px;
+    color: white;
+}
+input
+{
+   display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+th
+{
+  text-align: left;
+}
+.btn
+{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-left: 1px;
+    margin-top: 1px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+  }
+
+th,tr,td
+{
+ border:10px solid #e8ebef;
+}
+ul
+{
+ padding: 0px;
+ margin: 0px;
+}
+h3
+{
+  text-align: center;
+}
+
+</style>
+<div class="form-group" >
+    <h3>User</h3>
+
+    <table >
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{% for item in user.roles %}
+                     <li>{{ item }}</li>
+                    {% endfor %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+
+            <a class="btn btn-success mb-2 " href="{{ path('user_index') }}">Back to the list</a>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-danger mb-2 " type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+
+    </ul>
+  </div>
+{% endblock %}
