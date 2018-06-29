@@ -35,7 +35,7 @@ framework:
 
 # Twig Configuration
 twig:
-    cache: false 
+    cache: false
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
 
@@ -74,8 +74,8 @@ fos_user:
     firewall_name: main
     user_class: AppBundle\Entity\User
     from_email:
-        address: "%mailer_user%"
-        sender_name: "%mailer_user%"
+        address: "i.barry3g@gmail.com"
+        sender_name: "ib"
     # registration:
     #     form:
     #         type: AppBundle\Form\RegistrationType
